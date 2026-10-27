@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* STRICT THEME: Main Background Ivory, then Gold, then Dark Blue */
+    --ivory-main: #FBF8F1;        /* Main Website Background - Pure Rich Ivory */
+    --ivory-surface: #FFFDF9;     /* Card & Container Ivory Surface */
+    --ivory-muted: #F2ECE0;       /* Slightly deeper ivory for borders/sections */
+    --ivory-border: #E5DCCB;      /* Warm Ivory Border */
+    
+    --gold-main: #C69214;         /* Rich Golden Primary */
+    --gold-hover: #AF7F0E;        /* Darker Gold on Hover */
+    --gold-light: #FBF0D9;        /* Soft Gold Pill/Tag Background */
+    --gold-border: #D8A938;       /* Gold Border */
+
+    --dark-blue-text: #0B192C;    /* Dark Blue Text / Headings */
+    --dark-blue-deep: #070F1E;    /* Deep Midnight Dark Blue Accent */
+    --dark-blue-muted: #243B55;   /* Secondary Dark Blue */
+  }
+
+  body {
+    background-color: #FBF8F1; /* Primary Ivory Canvas */
+    color: #0B192C;            /* Primary Dark Blue Content */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FBF8F1;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Card hover lift */
+.card-hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(11, 25, 44, 0.12);
+  border-color: #C69214;
+}
+
+/* Gold button utility */
+.btn-gold {
+  background-color: #C69214;
+  color: #070F1E;
+  font-weight: 800;
+  border: 1px solid #D8A938;
+  transition: all 0.2s ease;
+}
+
+.btn-gold:hover {
+  background-color: #AF7F0E;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px -2px rgba(198, 146, 20, 0.35);
+}

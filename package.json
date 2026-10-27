@@ -1,0 +1,13 @@
+{
+  "name": "campusconnect",
+  "version": "1.0.0",
+  "description": "CampusConnect — College Event Management Website for Symbiosis Institute of Technology (SIT), Nagpur",
+  "private": true,
+  "scripts": {
+    "db:init": "cd server && npm run db:init",
+    "test:e2e": "cd server && node test/e2e-verification.js",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build"
+  }
+}
